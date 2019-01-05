@@ -1,0 +1,26 @@
+*{
+    font-family: 'Quicksand', sans-serif;
+}
+img {
+    height: 150px;
+    width:150px;
+}
+
+button {
+    padding: 5px;
+}
+
+button p {
+    margin-top: 2px;
+    margin-bottom: -10px;
+}
+
+#title {
+    margin-top: 0px;
+}
+
+#wrapper {
+    background-image: url('../images/background.jpg');
+    min-height: 100vh;
+    padding: 20px;
+}
