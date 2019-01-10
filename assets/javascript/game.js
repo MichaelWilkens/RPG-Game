@@ -28,6 +28,40 @@ $('.character').on('click', function(){
     }
 })
 
+//Check for loss
+function checkForLoss(){
+    if($('[status="active-player"]').attr('hp')<=0){
+        $('#lose-background-image').css('display','block')
+        $('#lose-message').css('display','block')
+        $('#background-image').css('display', 'none')
+        $('#enemies').css('display','none')
+        $('#fight-section').css('display','none')
+        $('#defender').css('display','none')
+        $('#yourplayertitle').css('display','none')
+        $('#reset').css('display','block')
+        $('#reset').on('click', function(){
+            location.reload()
+        })
+    }
+} 
+
+//Check for win
+function checkForWin(){
+    if($('[status="active-player"]').attr('hp')>=0 && $('#defender').children(':nth-child(4)').attr('hp')<0){
+        $('#win-background-image').css('display','block')
+        $('#win-message').css('display','block')
+        $('#background-image').css('display', 'none')
+        $('#enemies').css('display','none') 
+        $('#fight-section').css('display','none')
+        $('#defender').css('display','none')
+        $('#yourplayertitle').css('display','none')
+        $('#reset').css('display','block')
+        $('#reset').on('click', function(){
+            location.reload()
+        })
+    }
+} 
+
 //Attack Button Logic
 $('#attack').on('click', function(){
     if( $('#defender').children(':last').attr('status')==='active-enemy'){
@@ -37,12 +71,16 @@ $('#attack').on('click', function(){
         $('[status="active-player"]').attr('hp', newActivePlayerHP)
         $('[status="active-player"]').children('span').text('[status="active-player"]').attr('hp')
         AssignHP()
+        $('[status="active-player"]').animate({width:'200px'}, 50)
+        $('[status="active-player"]').animate({width:'150px'}, 50)
 
         //Lower Defender HP
         var newDefenderHP = parseInt($('[status="active-enemy"]').attr('hp'))-parseInt($('[status="active-player"]').attr('damage'))
         $('[status="active-enemy"]').attr('hp',newDefenderHP)
         $('[status="active-enemy"]').children('span').text('[status="active-enemy"]').attr('hp')
         AssignHP()
+        $('[status="active-enemy"]').animate({width:'200px'}, 50)
+        $('[status="active-enemy"]').animate({width:'150px'}, 50)
 
         //Increase Active Player Damage
         var newDamage = parseInt($('[status="active-player"]').attr('damage')) + parseInt($('[status="active-player"]').attr('originalDamage'))
@@ -59,11 +97,13 @@ $('#attack').on('click', function(){
                 $('#defender').append($(this))
                 $(this).attr('status', 'active-enemy')
             })
-            
-            
         }
+
+        checkForLoss();
+        checkForWin();
     }
 })
+
 
 
 

@@ -16,17 +16,24 @@
             <h1 id='title'>RPG Game</h1>
         </header>
 
-        <div>
+        <img id='background-image' src='assets/images/background.jpg' attr='the office murder in savannah'>
+        <img id='lose-background-image' src='assets/images/lose-background-image.jpg' attr='the office'>
+        <img id='win-background-image' src='assets/images/win-background-image.jpg' attr='the office'>
+        
+        <p id='lose-message'>You lose</p>
+        <p id='win-message'>You win</p>
+
+        <div id='main-content'>
             <div id='character-start'>
                 <h3>Choose Your Player</h3>
-                <button id='circle' class='character' hp='130' originalDamage = '13' damage='13'><p>Pam</p><br><img src='assets/images/pam.jpg'><br><span id='circleHP'></span></button>
-                <button id='square' class='character' hp='120' originalDamage='15' damage='15'><p>Jim</p><br><img src='assets/images/jim.jpg'><br><span id='squareHP'></span></button>
-                <button id='triangle' class='character' hp='110' originalDamage='20' damage='20'><p>Prison Mike</p><br><img src='assets/images/prisonmike.jpg'><br><span id='triangleHP'></span></button>
-                <button id='pentagon' class='character' hp='90' originalDamage='23' damage='23'><p>Dwight</p><br><img src='assets/images/dwight.jpg'><br><span id='pentagonHP'></span></button>
+                <button id='circle' class='character' hp='130' originalDamage = '13' damage='13'><p>Pam</p><br><img class='character-image' src='assets/images/pam.jpg'><br><span id='circleHP'></span></button>
+                <button id='square' class='character' hp='120' originalDamage='15' damage='15'><p>Jim</p><br><img class='character-image' src='assets/images/jim.jpg'><br><span id='squareHP'></span></button>
+                <button id='triangle' class='character' hp='110' originalDamage='20' damage='20'><p>Prison Mike</p><br><img class='character-image' src='assets/images/prisonmike.jpg'><br><span id='triangleHP'></span></button>
+                <button id='pentagon' class='character' hp='90' originalDamage='23' damage='23'><p>Dwight</p><br><img class='character-image' src='assets/images/dwight.jpg'><br><span id='pentagonHP'></span></button>
             </div>
 
             <div id='your-player' status='empty'>
-                <h3>Your Player</h3> 
+                <h3 id='yourplayertitle'>Your Player</h3> 
             </div>
 
             <div id='enemies'>
@@ -42,6 +49,9 @@
                 <h3>Defender</h3> 
             </div>
         </div>
+
+        <button id='reset'>Play Again</button>
+
     </div>
     <script
     src="https://code.jquery.com/jquery-3.3.1.js"
