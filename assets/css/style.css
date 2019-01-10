@@ -1,5 +1,6 @@
 *{
     font-family: 'Quicksand', sans-serif;
+    font-size: 1em;
 }
 .character-image {
     height: 120px;
@@ -56,7 +57,7 @@ button p {
 #reset{
     display:none;
     position:fixed;
-    bottom:500px;
+    bottom:400px;
     left:20px;
     height:50px;
     width:150px;
